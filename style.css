@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #ffc0cb, #ff4d4d);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.footer-message {
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Click Me Button */
+.click-me-btn {
+  background-color: #ff3366;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.click-me-btn:hover {
+  background-color: #ff0055;
+}
+
+/* Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border: 3px solid #ff4d4d;
+  width: 90%;
+  max-width: 600px;
+  color: #333;
+  border-radius: 20px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.close-btn {
+  color: #ff4d4d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Balloons */
+.balloons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  background: pink;
+  border-radius: 50% 50% 50% 50%;
+  animation: float 10s infinite ease-in;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Roses */
+.rose {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+}
+
+.left-rose {
+  left: 0;
+}
+
+.right-rose {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+  margin-top: 20px;
+  position: relative;
+  height: 180px;
+}
+
+.slide {
+  width: 420px;
+  height: 460px;
+  object-fit: cover;
+  margin: 0 5px;
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  display: none;
+}
+
+.slide.active {
+  display: inline-block;
+}
